@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="plat_luo"
+  id="myeclipse.1349759303818"
+  context-root="/plat_luo"
+  j2ee-spec="5.0"
+  archive="plat_luo.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

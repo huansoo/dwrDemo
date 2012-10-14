@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<class name="userAction">
+	<action name="saveUser" method="userSave">
+		<forward name="list" path="/jsp/user/userList.jsp"/>
+		<forward name="index" path="/jsp/user/index.jsp"/>
+	</action>
+	<action name="saveUser2" method="userSave">
+		<forward name="list2" path="/jsp/user/userList2.jsp"/>
+	</action>
+</class>
+<class name="userInfoAction">
+
+</class>
+</config>

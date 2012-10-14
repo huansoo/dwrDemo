@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<class name="userAction">
+	<action name="action/user/saLogin.do" method="saLogin">
+		<forward name="index" path="/jsp/sa/index.jsp" redirect="true"/>
+	</action>
+	<action name="action/user/saLogin2.do" method="saLogin2">
+		<forward name="index2" path="/action/sa/saLogin.do" redirect="true"/>
+	</action>
+</class>
+<class name="saAction">
+	<action name="action/sa/saLogin.do" method="saLogin">
+		<forward name="index" path="/jsp/sa/index.jsp"/>
+	</action>
+	<action name="action/sa/saLogin2.do" method="saLogin2">
+		<forward name="index2" path="/action/user/saLogin.do"/>
+	</action>
+</class>
+</config>

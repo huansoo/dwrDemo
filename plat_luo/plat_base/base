@@ -1,0 +1,12 @@
+主要实现MVC
+C--主要是action的过滤器
+saveUser.do---查找所有的xml中的action的name，找到对应的class类，并执行对应的method方法
+<class name="userAction">
+	<action name="saveUser" method="saveUser">
+		<forward name="list" path="/jsp/user/list.jsp"/>
+	</action>
+</class>
+
+V---spring
+M----主要是实现mybatis功能
+insert into t_news(id,name)values(?,?);
