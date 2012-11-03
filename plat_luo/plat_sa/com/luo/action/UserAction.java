@@ -32,4 +32,10 @@ public class UserAction extends BaseAction{
 	public User findUserById(){
 		return userService.findUserById(1);
 	}
+	
+	public String queryUsersCount(){
+		int n = userService.queryUsersCount();
+		request.setAttribute("n", n);
+		return SUCCESS;
+	}
 }

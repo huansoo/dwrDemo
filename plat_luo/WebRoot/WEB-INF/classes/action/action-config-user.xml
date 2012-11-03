@@ -5,7 +5,10 @@
 		<forward name="success" path="/jsp/sa/index.jsp" redirect="no"/>
 	</action>
 	<action name="action/user/userList.do" method="userList">
-		<forward name="success" path="/jsp/sa/index1.jsp" redirect="no"/>
+		<forward name="success" path="/jsp/user/index.jsp" redirect="no"/>
+	</action>
+	<action name="action/user/queryUsersCount.do" method="queryUsersCount">
+		<forward name="success" path="/jsp/user/index.jsp" redirect="no"/>
 	</action>
 </class>
 </config>

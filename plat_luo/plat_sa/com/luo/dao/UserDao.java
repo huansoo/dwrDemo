@@ -1,5 +1,7 @@
 package com.luo.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 import com.luo.core.UtilFactory;
 import com.luo.db.QueryModel;
@@ -19,11 +21,14 @@ public class UserDao {
 	* @return List<User>
 	* @throws 
 	*/
-	public void findUserList() {
+	public List<User> findUserList() {
 		QueryModel model = new QueryModel();
-		model.setSql("insert into t_user(id,username,password)values(1,'tom','123')");
+		model.setSql("select * from t_user");
 		model.setTargetClass(User.class);
-		UtilFactory.getDaoTemplate().queryForList(model);
+		model.paramMap.put("id", 1);
+		model.paramMap.put("username", "tom");
+		List<User> userList = UtilFactory.getDaoTemplate().queryForList(model);
+		return userList;
 	}
 
 	/** 
@@ -41,6 +46,11 @@ public class UserDao {
 		model.putParamInMap("id", i);
 		User user = UtilFactory.getDaoTemplate().loadObject(model);
 		return user;
+	}
+
+	public int queryUsersCount() {
+		String sql = "select count(*) from t_user";
+		return UtilFactory.getDaoTemplate().queryForInt(sql);
 	}
 
 }

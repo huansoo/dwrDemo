@@ -2,12 +2,48 @@ package com.luo.util;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import com.luo.db.SaveModel;
 import com.luo.model.User;
 
 public class ReflectTool {
+
+	public static <T> T convertSQLMapToObject(Map<String,Object> map,Class<?> clazz){
+		Class<?>[] autoTypes={String.class,Integer.class,int.class,Long.class,long.class,Float.class,float.class,Double.class,double.class,Date.class};
+		Object obj = null;
+		try {
+			obj = clazz.newInstance();
+		}catch (Exception e) {
+			new Exception("sqlMap转换成对象时出错");
+			e.printStackTrace();
+		}
+		Field[] fields = clazz.getDeclaredFields();
+		for (Field f : fields) {
+			String attName = f.getName();//获得其所以属性id,username,password，在此我先简单的约定属性名必须和字段名一样
+			if(ReflectTool.isInArray(clazz,autoTypes)){
+				ReflectTool.setAttribute(obj,attName,map.get(attName));
+			}
+		}
+		return (T)obj;
+	}
+	
+	private static boolean isInArray(Class<?> clazz, Class<?>[] autoTypes) {
+		boolean flag = false;
+		for (int i = 0; i < autoTypes.length; i++) {
+			if(clazz.equals(autoTypes[i])){
+				flag = true;
+			}
+		}
+		return flag;
+	}
+
+	private static void setAttribute(Object obj, String attName, Object object) {
+		Field field = obj.getClass().getDeclaredField(attName);
+	}
 
 	public static SaveModel convertObjToModel(Object obj){
 		SaveModel model = new SaveModel();

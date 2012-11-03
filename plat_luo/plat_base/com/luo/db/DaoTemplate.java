@@ -40,9 +40,12 @@ public class DaoTemplate {
 	*/
 	public List  queryForList(QueryModel model) {
 		List list = jdbcTemplate.queryForList(model.getSql());
+		Class<?> clazz = model.getTargetClass();
 		Iterator it = list.iterator();
 		while(it.hasNext()) {
 		    Map userMap = (Map) it.next();
+		    
+		    
 		    System.out.print(userMap.get("user_id") + "\t");
 		    System.out.print(userMap.get("name") + "\t");
 		    System.out.print(userMap.get("sex") + "\t");
@@ -68,8 +71,12 @@ public class DaoTemplate {
 				sql=sql+"and "+ k + "=" +map.get(k).toString();
 			}
 		}
-		this.jdbcTemplate.q
+		
 		return null;
+	}
+
+	public int queryForInt(String sql) {
+		return this.jdbcTemplate.queryForInt(sql);
 	}
 	
 	

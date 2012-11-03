@@ -30,5 +30,5 @@ public interface UserService {
 	*/
 	public User findUserById(int i);
 
-	
+	public int queryUsersCount();
 }

@@ -25,12 +25,16 @@ public class UserServiceImpl implements UserService{
 
 	
 	public List<User> findUserList() {
-		userDao.findUserList();
-		return null;
+		return userDao.findUserList();
 	}
 
 
 	public User findUserById(int i) {
 		return userDao.findUserById(i);
+	}
+
+
+	public int queryUsersCount() {
+		return userDao.queryUsersCount();
 	}
 }
