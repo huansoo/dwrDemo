@@ -42,7 +42,7 @@ public class ReflectTool {
 	}
 
 	private static void setAttribute(Object obj, String attName, Object object) {
-		Field field = obj.getClass().getDeclaredField(attName);
+		//Field field = obj.getClass().getDeclaredField(attName);
 	}
 
 	public static SaveModel convertObjToModel(Object obj){
