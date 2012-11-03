@@ -1,19 +1,16 @@
 package com.luo.model;
 
-import javax.persistence.Entity;
-
-@Entity
 public class User {
 
-	private String id;
+	private int id;
 	private String username;
 	private String password;
 	
 	//get set
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUsername() {

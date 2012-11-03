@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class ActionModel {
 
-	private String actionName;
-	private String actionClass;
-	private String actionMethod;
+	private String actionName;			//action/user/saLogin.do
+	private String actionClass;			//userAction这个类约定必须在action/user这个包下
+	private String actionMethod;		//saLogin
 	private List<Map<String,String>> mapList;
 	
 	public String getActionName() {

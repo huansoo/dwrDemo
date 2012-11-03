@@ -36,7 +36,7 @@
  <!-- struts 控制器 -->
   <filter>
       <filter-name>platFliter</filter-name>
-      <filter-class>com.luo.action.dispatcher.ActionFilter</filter-class>
+      <filter-class>com.luo.core.dispatcher.ActionFilter</filter-class>
   </filter>
   <filter-mapping>
       <filter-name>platFliter</filter-name>

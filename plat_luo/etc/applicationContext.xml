@@ -20,6 +20,7 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="classpath:jdbc.properties"/>
     </bean>
+    <bean id="daoTemplate" class="com.luo.db.DaoTemplate"/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close"> 
         <property name="driverClassName" value="${driverClassName}"/>
@@ -70,7 +71,7 @@
 		</property>
 	</bean>
 	
-	<bean id="daoTemplate" class="com.luo.db.DaoTemplate">
-		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 </beans>

@@ -1,8 +1,5 @@
 package com.luo.action;
 
-import org.springframework.stereotype.Controller;
-
-@Controller
 public class SaAction extends BaseAction{
 
 	public String saLogin(){

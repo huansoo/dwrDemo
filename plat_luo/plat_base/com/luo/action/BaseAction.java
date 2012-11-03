@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
  */
 public class BaseAction{
 
+	public static final String SUCCESS="success";
 	public HttpServletRequest request;
 	public HttpServletResponse response;
 	public HttpSession session;
