@@ -18,7 +18,12 @@
     
     <!--Jdbc Description -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations" value="classpath:jdbc.properties"/>
+        <property name="locations">
+        	<list>
+        		<value>classpath:jdbc.properties</value>
+        		<value>classpath:log4j.properties</value>
+        	</list>
+        </property>
     </bean>
     <bean id="daoTemplate" class="com.luo.db.DaoTemplate"/>
 
