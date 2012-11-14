@@ -22,7 +22,10 @@
 		<property name="jbpmCfg" value="jbpm.cfg.xml" />
   </bean>
   <bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine" />
-  
+ 
+  <bean id="jbpmTemplate" class="com.luo.jbpm.dao.JbpmTemplate">
+  	<property name="processEngine" ref="processEngine"></property>
+  </bean>
   
 	<!-- 加载数据库属性配置文件
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -61,7 +64,7 @@
     <property name="hibernateProperties">
         <props>
             <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
-            <prop key="hibernate.hbm2ddl.auto">update</prop>
+            <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
         </props>
     </property>
   </bean>

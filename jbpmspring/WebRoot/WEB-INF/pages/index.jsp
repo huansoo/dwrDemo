@@ -4,9 +4,11 @@
   <head>
     <title>My JSP 'index.jsp' starting page</title>
   <body>
-    
-<a href="<%=request.getContextPath()%>/jbpm/startDeployment.do">发起一个流程定义</a>
-
-
+   请先登录：
+   <form action="<%=request.getContextPath()%>/login.do" method="POST">
+   		<input name="username" type="text"/><br/>
+   		<input name="password" type="text"/><br/>
+   		<input type="submit" value="登录"/><br/>
+   </form>
   </body>
 </html>

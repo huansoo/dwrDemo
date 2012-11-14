@@ -1,7 +1,6 @@
 package com.luo.jbpm.web;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.jbpm.api.ProcessDefinition;
@@ -16,15 +15,21 @@ public class DeploymentController extends BaseController{
 	
 	@RequestMapping(value="/startDeployment.do",method=RequestMethod.GET)
 	public String startDeployment(){
-		deploymentService.startDeployment("leave.jpdl.xml");
+		String jpdlPath = "com/luo/jbpm/jpdl/leave.jpdl.xml";
+		deploymentService.startDeployment(jpdlPath);
 		return "redirect:/jbpm/definitionList.do";
 	}
 
 	@RequestMapping("/definitionList.do")
-	public String deploymentList(HttpServletRequest request){
+	public String definitionList(HttpServletRequest request){
 		List<ProcessDefinition> list = deploymentService.processDefinitionList();
 		request.setAttribute("definitionList", list);
 		return "definitionList";
+	}
+	@RequestMapping("/deleteProcessDeployment.do")
+	public String deleteProcessDeployment(HttpServletRequest request){
+		deploymentService.deleteProcessDeployment(request.getParameter("pd"));
+		return "redirect:/jbpm/definitionList.do";
 	}
 
 }

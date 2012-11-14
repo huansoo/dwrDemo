@@ -3,10 +3,10 @@
    <start g="196,25,48,48" name="start1">
       <transition to="申请"/>
    </start>
-   <task assignee="#{owner}" form="request.jsp" g="172,118,92,52" name="申请">
+   <task assignee="#{owner}" form="http://localhost:8080/jbpmspring/jbpm/postRequestWorker.do" g="172,118,92,52" name="申请">
       <transition to="经理审批"/>
    </task>
-   <task assignee="manager" form="manager.jsp" g="175,217,92,52" name="经理审批">
+   <task assignee="manager" form="http://localhost:8080/jbpmspring/jbpm/postRequestManager.do" g="175,217,92,52" name="经理审批">
       <transition g="-32,-8" name="批准" to="exclusive1"/>
       <transition g="128,221;124,165:-42,-18" name="驳回" to="申请"/>
    </task>
@@ -14,7 +14,7 @@
       <transition g="-39,-10" name="结束" to="end1"/>
       <transition g="339,342:-71,-17" name="老板审批" to="老板审批"/>
    </decision>
-   <task assignee="boss" form="boss.jsp" g="294,375,92,52" name="老板审批">
+   <task assignee="boss" form="http://localhost:8080/jbpmspring/jbpm/postRequestBoss.do" g="294,375,92,52" name="老板审批">
       <transition g="339,457:" to="end1"/>
    </task>
    <end g="199,445,48,48" name="end1"/>

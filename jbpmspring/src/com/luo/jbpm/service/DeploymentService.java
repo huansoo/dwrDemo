@@ -1,7 +1,6 @@
 package com.luo.jbpm.service;
 
 import java.util.List;
-
 import org.jbpm.api.ProcessDefinition;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +13,9 @@ public class DeploymentService extends BaseService{
 
 	public List<ProcessDefinition> processDefinitionList() {
 		return jbpmTemplate.processDefinitionList();
+	}
+
+	public void deleteProcessDeployment(String deployId) {
+		jbpmTemplate.deleteProcessDeployment(deployId);
 	}
 }
