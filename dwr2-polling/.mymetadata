@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="dwr2-polling"
+  id="myeclipse.1351082260778"
+  context-root="/dwr2-polling"
+  j2ee-spec="5.0"
+  archive="dwr2-polling.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
